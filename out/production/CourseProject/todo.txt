@@ -1,2 +1,0 @@
-1. Connect eventqueue to playerpanel, listen to the textfield, repair the methods.
-
