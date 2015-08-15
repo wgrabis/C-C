@@ -14,10 +14,10 @@ import scala.swing.GridPanel
 class InfoPanel (sizeX: Int, sizeY: Int, eventQueue: EventQueue) extends GridPanel(1, 3){
   val fixedSize: Int = sizeX / 3
 
-  val player1 = new PlayerPanel(fixedSize, sizeY - 30)
+  val player1 = new PlayerPanel(fixedSize, sizeY - 30, eventQueue)
   player1.alignLeft()
 
-  val player2 = new PlayerPanel(fixedSize, sizeY - 30)
+  val player2 = new PlayerPanel(fixedSize, sizeY - 30, eventQueue)
   player2.alignRight()
 
   val buttonPanel = new ButtonPanel(fixedSize, sizeY, eventQueue)
@@ -46,6 +46,12 @@ class InfoPanel (sizeX: Int, sizeY: Int, eventQueue: EventQueue) extends GridPan
   def activatePlayer2(): Unit ={
     player1.setInactive()
     player2.setActive()
+  }
+
+  def makeInactive(): Unit ={
+    buttonPanel.setNewGame()
+    player1.setBlocked()
+    player2.setBlocked()
   }
 
 

@@ -4,18 +4,19 @@ import java.awt.{Dimension, Color, Graphics2D}
 
 import BottomPanel.PlayerPanel.Bottom.PlayerBottomPanel
 import BottomPanel.PlayerPanel.Upper.PlayerUpperPanel
+import Events.EventQueue
 
 import scala.swing.FlowPanel
 
 /**
  * Created by Admin on 2015-08-14.
  */
-class PlayerPanel(sizeX: Int, sizeY: Int) extends FlowPanel{
+class PlayerPanel(sizeX: Int, sizeY: Int, eventQueue: EventQueue) extends FlowPanel{
   background=new Color(200)
 
   preferredSize =  new Dimension(sizeX, sizeY)
 
-  val bottomPanel = new PlayerBottomPanel(sizeX, sizeY/2, "1")
+  val bottomPanel = new PlayerBottomPanel(sizeX, sizeY/2, "1", eventQueue)
   val upperPanel = new PlayerUpperPanel(sizeX, sizeY/2, "1")
 
   contents += upperPanel

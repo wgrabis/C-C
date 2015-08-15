@@ -15,7 +15,7 @@ import scala.swing.event._
 
 
 class BottomPanelActive (rows0: Int, cols0: Int, eventQueue: EventQueue) extends GridPanel(1, cols0){
-  val height=2
+ /* val height=2
   val width=2
   var NewGameActive=false
 
@@ -33,11 +33,11 @@ class BottomPanelActive (rows0: Int, cols0: Int, eventQueue: EventQueue) extends
       buttonOne.text="Wygrał gracz "+Player2.getName()+"!"
     }
   }
-  val Player1=new PlayerPanel(200,140)
-  Player1.alignLeft()
-
-  val Player2=new PlayerPanel(200,140)
-  Player2.alignRight()
+  //val Player1=new PlayerPanel(200,140, )
+ // Player1.alignLeft()
+//
+ // val Player2=new PlayerPanel(200,140)
+ // Player2.alignRight()
 
   val buttonOne = new Button {
     text = "Nowa gra"
@@ -67,6 +67,6 @@ class BottomPanelActive (rows0: Int, cols0: Int, eventQueue: EventQueue) extends
     g.clearRect(0, 0, size.width, size.height)
     g.drawRect(1, 1, 100, 100)
 
-  }
+  }*/
 }
 

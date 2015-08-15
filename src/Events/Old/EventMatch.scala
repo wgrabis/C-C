@@ -11,6 +11,7 @@ import scala.swing._
  * Created by Admin on 2015-01-23.
  */
 class EventMatch(bottom: => BottomPanelActive,board: => Board,eventPrint: => EventDisplay) {
+  /*
   var CurrentPlayer=1
   var BoardData = new Array2Dim
   var GameActive=0
@@ -161,5 +162,5 @@ class EventMatch(bottom: => BottomPanelActive,board: => Board,eventPrint: => Eve
         retData=1
       }
       retData
-  }
+  }*/
 }

@@ -14,7 +14,7 @@ class Board(mSize: Int, events: EventQueue) extends GridPanel(20,20){
   preferredSize = new Dimension(mSize, mSize)
   val boardButtons = new BoardArray(20, 20, events, this, mSize/20)
   border = Swing.EmptyBorder(0,0,0,0)
-  clear()
+  inactivate()
 
   def setCross(posX: Int, posY: Int): Unit ={
     boardButtons.get(posX, posY).markCross()

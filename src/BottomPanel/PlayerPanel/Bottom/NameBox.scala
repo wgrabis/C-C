@@ -2,13 +2,15 @@ package BottomPanel.PlayerPanel.Bottom
 
 import java.awt.{Dimension, Font}
 
+import Events.EventQueue
+
 import scala.swing.event.EditDone
 import scala.swing.{Alignment, TextField}
 
 /**
  * Created by Admin on 2015-08-14.
  */
-class NameBox(sizeX: Int, sizeY: Int, name: String) extends TextField(name){
+class NameBox(sizeX: Int, sizeY: Int, name: String, eventQueue: EventQueue) extends TextField(name){
 
   editable=false
   font=new Font("Serif",100,40)
@@ -35,14 +37,6 @@ class NameBox(sizeX: Int, sizeY: Int, name: String) extends TextField(name){
     text
   }
 
-  // TO DO REPLACE WITH EVENT !!!
-  /*
-  listenTo(this)
-  reactions+={
-    case EditDone(this)=>
-      if(text.length>10)
-      {
-        text=(text.substring(0,9))
-      }
-  }*/
+  action = new EditAction(name, eventQueue)
+
 }

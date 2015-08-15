@@ -13,26 +13,27 @@ import java.awt.{ Color, Graphics2D }
 
 
 object MainFrameObject extends SimpleSwingApplication{
-  //val events: EventMatch=new EventMatch(BottomPanel,board,EventPrint)
-  //debug
+
+  val sizeX = 620
+  val sizeY = 840
+
+  def bottomSize() : Int = sizeY - sizeX - 20
+  def boardSize() : Int = sizeX - 20
+
   val eventQueue = new EventQueue()
-  val board =new Board(600, eventQueue)
+  val board = new Board(boardSize(), eventQueue)
+  val BottomPanel = new InfoPanel(boardSize(), bottomSize(), eventQueue)
 
-
-  val BottomPanel = new InfoPanel(600, 170, eventQueue)
-
-  val EventPrint:EventDisplay= new EventDisplay(){
-    preferredSize=new Dimension(600,70)
-  }
   def top = new MainFrame {
-    resizable= true
+
+    resizable = false
     foreground=new Color(255)
     title = "Kółko i krzyżyk"
-    preferredSize = new Dimension(620,840)
+    preferredSize = new Dimension(sizeX - 10, sizeY)
+
     contents = new FlowPanel{
       contents+=board
       contents+=BottomPanel
-      contents+=EventPrint
     }
   }
 }

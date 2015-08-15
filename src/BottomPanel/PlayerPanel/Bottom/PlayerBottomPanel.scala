@@ -2,14 +2,16 @@ package BottomPanel.PlayerPanel.Bottom
 
 import java.awt.{Graphics2D, Color}
 
+import Events.EventQueue
+
 import scala.swing.{Alignment, FlowPanel}
 
 /**
  * Created by Admin on 2015-08-14.
  */
-class PlayerBottomPanel(sizeX : Int, sizeY: Int, name: String) extends FlowPanel{
+class PlayerBottomPanel(sizeX : Int, sizeY: Int, name: String, eventQueue: EventQueue) extends FlowPanel{
   background = new Color(200)
-  val nameBox = new NameBox(sizeX, sizeY, name)
+  val nameBox = new NameBox(sizeX, sizeY, name, eventQueue)
 
   contents += nameBox
 
